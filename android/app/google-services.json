@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "974860683891",
+    "firebase_url": "https://inmobiliariauy-fd463.firebaseio.com",
+    "project_id": "inmobiliariauy-fd463",
+    "storage_bucket": "inmobiliariauy-fd463.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974860683891:android:1d7166e71931a25159f806",
+        "android_client_info": {
+          "package_name": "com.example.inmobiliariauy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974860683891-essiagvbus50766tpe8q9junphk11lfn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.inmobiliariauy",
+            "certificate_hash": "944024c4647219158caabf30e566ad0ef42407fc"
+          }
+        },
+        {
+          "client_id": "974860683891-777f9r3g5v3tf3qon0oa1rc15tfrnjbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANKVLaK3gDEqdl4sTjOuus069v3zDYPTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974860683891-777f9r3g5v3tf3qon0oa1rc15tfrnjbu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "974860683891-q6p3s0797ohimue5uvhd84vqh2bcd407.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inmobiliariauy.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974860683891:android:50e5e103614febb259f806",
+        "android_client_info": {
+          "package_name": "com.inmobiliariauy.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974860683891-h9qv22f2p97ttm6v0h1he72n7squ5ork.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inmobiliariauy.app",
+            "certificate_hash": "944024c4647219158caabf30e566ad0ef42407fc"
+          }
+        },
+        {
+          "client_id": "974860683891-777f9r3g5v3tf3qon0oa1rc15tfrnjbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANKVLaK3gDEqdl4sTjOuus069v3zDYPTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974860683891-777f9r3g5v3tf3qon0oa1rc15tfrnjbu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "974860683891-q6p3s0797ohimue5uvhd84vqh2bcd407.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inmobiliariauy.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
