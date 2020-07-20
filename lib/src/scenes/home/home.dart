@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inmobiliariauy/src/scenes/newRegister/newRegister.dart';
 
 class Home extends StatelessWidget {
 
@@ -19,8 +20,11 @@ class Home extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {
-
+        onPressed: () {
+          Navigator.push(
+           context,
+           MaterialPageRoute(builder: (context) => NewRegister()),
+          );
         },
         tooltip: 'Nuevo registro',
         child: Icon(Icons.add),
