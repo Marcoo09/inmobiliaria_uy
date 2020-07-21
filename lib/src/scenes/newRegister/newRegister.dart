@@ -16,7 +16,32 @@ class _NewRegisterState extends State<NewRegister> {
         children: <Widget>[
           ComboBox(title:'Modalidad',values:['Alquiler', 'Venta']),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Password'),
+            decoration: InputDecoration(labelText: 'Nombre del Dueño/a'),
+          ),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Teléfono'),
+          ),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Mail'),
+          ),
+          ComboBox(title:'Tipo de propiedad',values:['Casa', 'Apto', 'Local', 'Campo']),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Dirección'),
+          ),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Barrio'),
+          ),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Padrón'),
+          ),
+          ComboBox(title:'Tipo',values:['PH','PU']),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Precio USD (Venta)'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Precio por mes (Alquiler)'),
+              keyboardType: TextInputType.number
           ),
         ],
       ),
@@ -27,11 +52,92 @@ class _NewRegisterState extends State<NewRegister> {
       title: const Text('Step 2'),
       content: Column(
         children: <Widget>[
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Home Address'),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: TextFormField(
+                    decoration: InputDecoration(labelText: 'M2 Terreno'),
+                    keyboardType: TextInputType.number
+                ),
+              ),
+              Expanded(
+                child: ComboBox(title:'',values:['M2','Ha']),
+              ),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: TextFormField(
+                    decoration: InputDecoration(labelText: 'M2 Edificados'),
+                    keyboardType: TextInputType.number
+                ),
+              ),
+              Expanded(
+                child: ComboBox(title:'',values:['M2','Ha']),
+              ),
+            ],
           ),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Postcode'),
+            decoration: InputDecoration(labelText: 'Cantidad de Dormitorios'),
+            keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Dormitorio 1 M2'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Dormitorio 2 M2'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Dormitorio 3 M2'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Cantidad de Baños'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Baño 1 M2'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Baño 2 M2'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Baño 3 M2'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Living M2'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Comedor M2'),
+              keyboardType: TextInputType.number
+          ),
+          ComboBox(title:'Tipo de Cocina',values:['I','K', 'O']),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Cocina M2'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Cantidad de Plant'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Cochera M2'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Jardín M2'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Fondo M2'),
+              keyboardType: TextInputType.number
           ),
         ],
       ),
@@ -42,12 +148,13 @@ class _NewRegisterState extends State<NewRegister> {
       title: const Text('Step 3'),
       content: Column(
         children: <Widget>[
+          ComboBox(title:'Estado',values:['Reciclar','Regular', 'Bueno', 'Muy Bueno', 'Excelente']),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Home Address'),
+            decoration: InputDecoration(labelText: 'Año de construcción'),
+            keyboardType: TextInputType.number
           ),
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Postcode'),
-          ),
+          ComboBox(title:'Disposición',values:['Frente','Contrafrente', 'Lateral', 'Interno']),
+          ComboBox(title:'Orientación',values:['Norte','Sur', 'Este', 'Oeste', 'NorOeste','NorEste', 'SurOeste','SurEste']),
         ],
       ),
     ),
@@ -58,10 +165,32 @@ class _NewRegisterState extends State<NewRegister> {
       content: Column(
         children: <Widget>[
           TextFormField(
-            decoration: InputDecoration(labelText: 'Home Address'),
+              decoration: InputDecoration(labelText: 'Pisos del edificio'),
+              keyboardType: TextInputType.number
           ),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Postcode'),
+              decoration: InputDecoration(labelText: 'Gastos comunes'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Impuestos'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Contribución'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Impuesto Primaria'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Tributos Domiciliarios'),
+              keyboardType: TextInputType.number
+          ),
+          TextFormField(
+              decoration: InputDecoration(labelText: 'Tarifa de Saneamiento'),
+              keyboardType: TextInputType.number
           ),
         ],
       ),
@@ -73,10 +202,7 @@ class _NewRegisterState extends State<NewRegister> {
       content: Column(
         children: <Widget>[
           TextFormField(
-            decoration: InputDecoration(labelText: 'Home Address'),
-          ),
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Postcode'),
+            decoration: InputDecoration(labelText: 'Otros'),
           ),
         ],
       ),
@@ -110,6 +236,31 @@ class _NewRegisterState extends State<NewRegister> {
         body: Column(children: <Widget>[
           Expanded(
             child: Stepper(
+              controlsBuilder: (BuildContext context,
+                  {VoidCallback onStepContinue, VoidCallback onStepCancel}) {
+                return Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: FlatButton(
+                        color: Colors.blue,
+                        textColor: Colors.white,
+                        onPressed: onStepContinue,
+                        child: const Text('Avanzar'),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: FlatButton(
+                        color: Colors.blue,
+                        textColor: Colors.white,
+                        onPressed: onStepCancel,
+                        child: const Text('Anterior'),
+                      ),
+                    )
+                  ],
+                );
+              },
               steps: steps,
               currentStep: currentStep,
               onStepContinue: next,
