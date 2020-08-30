@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:inmobiliariauy/src/reusableWidgets/comboBox.dart';
+import 'package:inmobiliariauy/src/ui/reusable_widgets/comboBox.dart';
 
 class NewRegister extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class _NewRegisterState extends State<NewRegister> {
       state: StepState.complete,
       content: Column(
         children: <Widget>[
-          ComboBox(title:'Modalidad',values:['Alquiler', 'Venta']),
+          ComboBox(title: 'Modalidad', values: ['Alquiler', 'Venta']),
           TextFormField(
             decoration: InputDecoration(labelText: 'Nombre del Dueño/a'),
           ),
@@ -24,7 +24,9 @@ class _NewRegisterState extends State<NewRegister> {
           TextFormField(
             decoration: InputDecoration(labelText: 'Mail'),
           ),
-          ComboBox(title:'Tipo de propiedad',values:['Casa', 'Apto', 'Local', 'Campo']),
+          ComboBox(
+              title: 'Tipo de propiedad',
+              values: ['Casa', 'Apto', 'Local', 'Campo']),
           TextFormField(
             decoration: InputDecoration(labelText: 'Dirección'),
           ),
@@ -34,15 +36,14 @@ class _NewRegisterState extends State<NewRegister> {
           TextFormField(
             decoration: InputDecoration(labelText: 'Padrón'),
           ),
-          ComboBox(title:'Tipo',values:['PH','PU']),
+          ComboBox(title: 'Tipo', values: ['PH', 'PU']),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Precio USD (Venta)'),
-              keyboardType: TextInputType.number
-          ),
+              decoration: InputDecoration(labelText: 'Precio USD (Venta)'),
+              keyboardType: TextInputType.number),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Precio por mes (Alquiler)'),
-              keyboardType: TextInputType.number
-          ),
+              decoration:
+                  InputDecoration(labelText: 'Precio por mes (Alquiler)'),
+              keyboardType: TextInputType.number),
         ],
       ),
     ),
@@ -57,11 +58,10 @@ class _NewRegisterState extends State<NewRegister> {
               Expanded(
                 child: TextFormField(
                     decoration: InputDecoration(labelText: 'M2 Terreno'),
-                    keyboardType: TextInputType.number
-                ),
+                    keyboardType: TextInputType.number),
               ),
               Expanded(
-                child: ComboBox(title:'',values:['M2','Ha']),
+                child: ComboBox(title: '', values: ['M2', 'Ha']),
               ),
             ],
           ),
@@ -70,75 +70,59 @@ class _NewRegisterState extends State<NewRegister> {
               Expanded(
                 child: TextFormField(
                     decoration: InputDecoration(labelText: 'M2 Edificados'),
-                    keyboardType: TextInputType.number
-                ),
+                    keyboardType: TextInputType.number),
               ),
               Expanded(
-                child: ComboBox(title:'',values:['M2','Ha']),
+                child: ComboBox(title: '', values: ['M2', 'Ha']),
               ),
             ],
           ),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Cantidad de Dormitorios'),
-            keyboardType: TextInputType.number
-          ),
+              decoration: InputDecoration(labelText: 'Cantidad de Dormitorios'),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Dormitorio 1 M2'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Dormitorio 2 M2'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Dormitorio 3 M2'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Cantidad de Baños'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Baño 1 M2'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Baño 2 M2'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Baño 3 M2'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Living M2'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Comedor M2'),
-              keyboardType: TextInputType.number
-          ),
-          ComboBox(title:'Tipo de Cocina',values:['I','K', 'O']),
+              keyboardType: TextInputType.number),
+          ComboBox(title: 'Tipo de Cocina', values: ['I', 'K', 'O']),
           TextFormField(
               decoration: InputDecoration(labelText: 'Cocina M2'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Cantidad de Plant'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Cochera M2'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Jardín M2'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Fondo M2'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
         ],
       ),
     ),
@@ -148,13 +132,29 @@ class _NewRegisterState extends State<NewRegister> {
       title: const Text('Step 3'),
       content: Column(
         children: <Widget>[
-          ComboBox(title:'Estado',values:['Reciclar','Regular', 'Bueno', 'Muy Bueno', 'Excelente']),
+          ComboBox(title: 'Estado', values: [
+            'Reciclar',
+            'Regular',
+            'Bueno',
+            'Muy Bueno',
+            'Excelente'
+          ]),
           TextFormField(
-            decoration: InputDecoration(labelText: 'Año de construcción'),
-            keyboardType: TextInputType.number
-          ),
-          ComboBox(title:'Disposición',values:['Frente','Contrafrente', 'Lateral', 'Interno']),
-          ComboBox(title:'Orientación',values:['Norte','Sur', 'Este', 'Oeste', 'NorOeste','NorEste', 'SurOeste','SurEste']),
+              decoration: InputDecoration(labelText: 'Año de construcción'),
+              keyboardType: TextInputType.number),
+          ComboBox(
+              title: 'Disposición',
+              values: ['Frente', 'Contrafrente', 'Lateral', 'Interno']),
+          ComboBox(title: 'Orientación', values: [
+            'Norte',
+            'Sur',
+            'Este',
+            'Oeste',
+            'NorOeste',
+            'NorEste',
+            'SurOeste',
+            'SurEste'
+          ]),
         ],
       ),
     ),
@@ -166,32 +166,25 @@ class _NewRegisterState extends State<NewRegister> {
         children: <Widget>[
           TextFormField(
               decoration: InputDecoration(labelText: 'Pisos del edificio'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Gastos comunes'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Impuestos'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Contribución'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Impuesto Primaria'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Tributos Domiciliarios'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Tarifa de Saneamiento'),
-              keyboardType: TextInputType.number
-          ),
+              keyboardType: TextInputType.number),
         ],
       ),
     ),

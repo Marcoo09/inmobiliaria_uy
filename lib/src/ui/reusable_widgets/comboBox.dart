@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ComboBox extends StatefulWidget {
   final List<String> values;
   final String title;
@@ -11,7 +10,6 @@ class ComboBox extends StatefulWidget {
 }
 
 class _ComboBoxState extends State<ComboBox> {
-
   List<DropdownMenuItem<String>> _dropDownMenuItems;
   String _currentValue;
 
@@ -25,10 +23,7 @@ class _ComboBoxState extends State<ComboBox> {
   List<DropdownMenuItem<String>> getDropDownMenuItems() {
     List<DropdownMenuItem<String>> items = new List();
     for (String value in widget.values) {
-      items.add(new DropdownMenuItem(
-          value: value,
-          child: new Text(value)
-      ));
+      items.add(new DropdownMenuItem(value: value, child: new Text(value)));
     }
     return items;
   }
@@ -36,14 +31,14 @@ class _ComboBoxState extends State<ComboBox> {
   @override
   Widget build(BuildContext context) {
     return new Column(
-            children: <Widget>[
-              new Text(widget.title),
-              new DropdownButton(
-                value: _currentValue,
-                items: _dropDownMenuItems,
-                onChanged: changedDropDownItem,
-              )
-            ],
+      children: <Widget>[
+        new Text(widget.title),
+        new DropdownButton(
+          value: _currentValue,
+          items: _dropDownMenuItems,
+          onChanged: changedDropDownItem,
+        )
+      ],
     );
   }
 
@@ -52,5 +47,4 @@ class _ComboBoxState extends State<ComboBox> {
       _currentValue = selectedValue;
     });
   }
-
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:inmobiliariauy/src/scenes/home/home.dart';
+import 'package:inmobiliariauy/src/locator.dart';
+import 'package:inmobiliariauy/src/ui/scenes/home/home.dart';
 
 void main() {
+  setupLocator();
   runApp(MyApp());
 }
 
@@ -19,5 +21,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
