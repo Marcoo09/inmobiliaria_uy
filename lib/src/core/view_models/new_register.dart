@@ -40,13 +40,13 @@ class NewRegisterViewModel extends BaseViewModel {
   String houseOrientation = 'Norte';
 
   // MARK - Fourth section
-  int buildingFloors;
-  double commonExpenses;
-  double taxes;
-  double contribution;
-  double primaryTaxes;
-  double domiciliaryTaxes;
-  double sanitationFee;
+  int buildingFloors = 1;
+  double commonExpenses = 0.0;
+  double taxes = 0.0;
+  double contribution = 0.0;
+  double primaryTaxes = 0.0;
+  double domiciliaryTaxes = 0.0;
+  double sanitationFee = 0.0;
 
   // MARK - Fifth section
   String others = "";
@@ -68,7 +68,7 @@ class NewRegisterViewModel extends BaseViewModel {
   static const BusySalePrice = "busy_sale_price";
   static const BusyRentalPrice = "busy_rental_price";
 
-  // MARK - --Busy-- Third section
+  // MARK - --Busy-- Second section
 
   // MARK - --Busy-- Third section
   static const BusyHouseStateComboBox = "busy_house_state";
@@ -77,11 +77,18 @@ class NewRegisterViewModel extends BaseViewModel {
   static const BusyHouseOrientationComboBox = "busy_house_orientation";
 
   // MARK - --Busy-- Fourth section
+  static const BusyBuildingFloors = "Busy_building_floors";
+  static const BusyCommonExpenses = "Busy_common_expenses";
+  static const BusyTaxes = "busy_taxes";
+  static const BusyContribution = "busy_contribution";
+  static const BusyPrimaryTaxes = "Busy_primary_taxes";
+  static const BusyDomiciliaryTaxes = "busy_domiciliary_taxes";
+  static const BusySanitationFee = "busy_sanitation_fee";
 
   // MARK - --Busy-- Fifth section
   static const BusyOthers = "busy_others";
 
-// MARK - --Modifiers-- First section
+  // MARK - --Modifiers-- First section
   void setModality(String newValue) {
     setBusyForObject(BusyModalityComboBox, true);
     modality = newValue;
@@ -148,42 +155,78 @@ class NewRegisterViewModel extends BaseViewModel {
     setBusyForObject(BusyRentalPrice, false);
   }
 
-// MARK - --Modifiers-- Second section
+  // MARK - --Modifiers-- Second section
 
-// MARK - --Modifiers-- Third section
+  // MARK - --Modifiers-- Third section
   void setHouseState(String newValue) {
-    print(newValue);
     setBusyForObject(BusyHouseStateComboBox, true);
     houseState = newValue;
     setBusyForObject(BusyHouseStateComboBox, false);
   }
 
   void setYearOfConstruction(int newValue) {
-    print(newValue);
     setBusyForObject(BusyYearOfConstruction, true);
     yearOfConstruction = newValue;
     setBusyForObject(BusyYearOfConstruction, false);
   }
 
   void setHouseLayout(String newValue) {
-    print(newValue);
     setBusyForObject(BusyHouseLayoutComboBox, true);
     houseLayout = newValue;
     setBusyForObject(BusyHouseLayoutComboBox, false);
   }
 
   void setHouseOrientation(String newValue) {
-    print(newValue);
     setBusyForObject(BusyHouseOrientationComboBox, true);
     houseOrientation = newValue;
     setBusyForObject(BusyHouseOrientationComboBox, false);
   }
 
-// MARK - --Modifiers-- Fourth section
+  // MARK - --Modifiers-- Fourth section
+  void setBuildingFloors(int newValue) {
+    setBusyForObject(BusyBuildingFloors, true);
+    buildingFloors = newValue;
+    setBusyForObject(BusyBuildingFloors, false);
+  }
 
-// MARK - --Modifiers-- Fifth section
+  void setCommonExpenses(double newValue) {
+    setBusyForObject(BusyCommonExpenses, true);
+    commonExpenses = newValue;
+    setBusyForObject(BusyCommonExpenses, false);
+  }
+
+  void setTaxes(double newValue) {
+    setBusyForObject(BusyTaxes, true);
+    taxes = newValue;
+    setBusyForObject(BusyTaxes, false);
+  }
+
+  void setContribution(double newValue) {
+    setBusyForObject(BusyContribution, true);
+    contribution = newValue;
+    setBusyForObject(BusyContribution, false);
+  }
+
+  void setPrimaryTaxes(double newValue) {
+    setBusyForObject(BusyPrimaryTaxes, true);
+    primaryTaxes = newValue;
+    setBusyForObject(BusyPrimaryTaxes, false);
+  }
+
+  void setDomiciliaryTaxes(double newValue) {
+    setBusyForObject(BusyDomiciliaryTaxes, true);
+    domiciliaryTaxes = newValue;
+    setBusyForObject(BusyDomiciliaryTaxes, false);
+  }
+
+  void setSanitationFee(double newValue) {
+    setBusyForObject(BusySanitationFee, true);
+    sanitationFee = newValue;
+    setBusyForObject(BusySanitationFee, false);
+  }
+
+  // MARK - --Modifiers-- Fifth section
   void setOthers(String newValue) {
-    print(newValue);
     setBusyForObject(BusyOthers, true);
     others = newValue;
     setBusyForObject(BusyOthers, false);

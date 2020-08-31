@@ -223,29 +223,49 @@ class _NewRegisterState extends State<NewRegister> {
             return Column(
               children: <Widget>[
                 TextFormField(
-                    decoration:
-                        InputDecoration(labelText: 'Pisos del edificio'),
-                    keyboardType: TextInputType.number),
+                  decoration: InputDecoration(labelText: 'Pisos del edificio'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setBuildingFloors(int.parse(newValue)),
+                ),
                 TextFormField(
-                    decoration: InputDecoration(labelText: 'Gastos comunes'),
-                    keyboardType: TextInputType.number),
+                  decoration: InputDecoration(labelText: 'Gastos comunes'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setCommonExpenses(double.parse(newValue)),
+                ),
                 TextFormField(
-                    decoration: InputDecoration(labelText: 'Impuestos'),
-                    keyboardType: TextInputType.number),
+                  decoration: InputDecoration(labelText: 'Impuestos'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setTaxes(double.parse(newValue)),
+                ),
                 TextFormField(
-                    decoration: InputDecoration(labelText: 'Contribución'),
-                    keyboardType: TextInputType.number),
+                  decoration: InputDecoration(labelText: 'Contribución'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setContribution(double.parse(newValue)),
+                ),
                 TextFormField(
-                    decoration: InputDecoration(labelText: 'Impuesto Primaria'),
-                    keyboardType: TextInputType.number),
+                  decoration: InputDecoration(labelText: 'Impuesto Primaria'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setPrimaryTaxes(double.parse(newValue)),
+                ),
                 TextFormField(
-                    decoration:
-                        InputDecoration(labelText: 'Tributos Domiciliarios'),
-                    keyboardType: TextInputType.number),
+                  decoration:
+                      InputDecoration(labelText: 'Tributos Domiciliarios'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setDomiciliaryTaxes(double.parse(newValue)),
+                ),
                 TextFormField(
-                    decoration:
-                        InputDecoration(labelText: 'Tarifa de Saneamiento'),
-                    keyboardType: TextInputType.number),
+                  decoration:
+                      InputDecoration(labelText: 'Tarifa de Saneamiento'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setSanitationFee(double.parse(newValue)),
+                ),
               ],
             );
           },
