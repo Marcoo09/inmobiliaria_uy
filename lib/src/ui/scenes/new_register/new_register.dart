@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:inmobiliariauy/src/core/view_models/new_register.dart';
+import 'package:inmobiliariauy/src/locator.dart';
 import 'package:inmobiliariauy/src/ui/reusable_widgets/comboBox.dart';
+import 'package:stacked/stacked.dart';
 
 class NewRegister extends StatefulWidget {
   @override
@@ -12,40 +15,70 @@ class _NewRegisterState extends State<NewRegister> {
       title: const Text('Step 1'),
       isActive: true,
       state: StepState.complete,
-      content: Column(
-        children: <Widget>[
-          ComboBox(title: 'Modalidad', values: ['Alquiler', 'Venta']),
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Nombre del Dueño/a'),
-          ),
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Teléfono'),
-          ),
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Mail'),
-          ),
-          ComboBox(
-              title: 'Tipo de propiedad',
-              values: ['Casa', 'Apto', 'Local', 'Campo']),
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Dirección'),
-          ),
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Barrio'),
-          ),
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Padrón'),
-          ),
-          ComboBox(title: 'Tipo', values: ['PH', 'PU']),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Precio USD (Venta)'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration:
-                  InputDecoration(labelText: 'Precio por mes (Alquiler)'),
-              keyboardType: TextInputType.number),
-        ],
-      ),
+      content: ViewModelBuilder.reactive(
+          builder: (context, NewRegisterViewModel viewModel, child) {
+            return Column(
+              children: <Widget>[
+                ComboBox(
+                  title: 'Modalidad',
+                  values: ['Alquiler', 'Venta'],
+                  onChanged: viewModel.setModality,
+                ),
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Nombre del Dueño/a'),
+                  onChanged: (newValue) => viewModel.setOwnerName(newValue),
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Teléfono',
+                  ),
+                  onChanged: (newValue) => viewModel.setPhone(newValue),
+                ),
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'E-mail'),
+                  onChanged: (newValue) => viewModel.setEmail(newValue),
+                ),
+                ComboBox(
+                  title: 'Tipo de propiedad',
+                  values: ['Casa', 'Apto', 'Local', 'Campo'],
+                  onChanged: viewModel.setPropertyType,
+                ),
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Dirección'),
+                  onChanged: (newValue) => viewModel.setAddress(newValue),
+                ),
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Barrio'),
+                  onChanged: (newValue) => viewModel.setNeighborhood(newValue),
+                ),
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Padrón'),
+                  onChanged: (newValue) => viewModel.setCensus(newValue),
+                ),
+                ComboBox(
+                  title: 'Tipo',
+                  values: ['PH', 'PU'],
+                  onChanged: (newValue) => viewModel.setNeighborhood(newValue),
+                ),
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Precio USD (Venta)'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) => viewModel.setSalePrice(
+                    int.parse(newValue),
+                  ),
+                ),
+                TextFormField(
+                  decoration:
+                      InputDecoration(labelText: 'Precio por mes (Alquiler)'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) => viewModel.setRentalPrice(
+                    int.parse(newValue),
+                  ),
+                ),
+              ],
+            );
+          },
+          viewModelBuilder: () => locator<NewRegisterViewModel>()),
     ),
     Step(
       isActive: false,
