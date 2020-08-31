@@ -17,9 +17,45 @@ class NewRegisterViewModel extends BaseViewModel {
   int salePrice = 0;
   int rentalPrice = 0;
 
+  // MARK - Second section
+  int m2Ground;
+  int m2Built;
+  int quantityOfBedrooms;
+  List<int> m2OfBedrooms;
+  int quantityOfBathrooms;
+  List<int> m2OfBathrooms;
+  int m2OfLiving;
+  int m2OfDinningRoom;
+  String typeOfKitchen;
+  int m2OfKitchen;
+  int quantityOfFloors;
+  int m2OfGarage;
+  int m2OfFrontGarden;
+  int m2OfBackGarden;
+
+  // MARK - Third section
+  String houseState = 'Reciclar';
+  int yearOfConstruction;
+  String houseLayout = 'Frente';
+  String houseOrientation = 'Norte';
+
+  // MARK - Fourth section
+  int buildingFloors;
+  double commonExpenses;
+  double taxes;
+  double contribution;
+  double primaryTaxes;
+  double domiciliaryTaxes;
+  double sanitationFee;
+
+  // MARK - Fifth section
+  String others = "";
+
   final NavigationService _navigationService = locator<NavigationService>();
 
   // MARK: - Busy keys
+
+  // MARK - --Busy-- Firts section
   static const BusyModalityComboBox = "busy_modality";
   static const BusyOwnerField = "busy_owner_field";
   static const BusyPhoneField = "busy_phone_field";
@@ -32,8 +68,20 @@ class NewRegisterViewModel extends BaseViewModel {
   static const BusySalePrice = "busy_sale_price";
   static const BusyRentalPrice = "busy_rental_price";
 
-  void onSearchChanged() {}
+  // MARK - --Busy-- Third section
 
+  // MARK - --Busy-- Third section
+  static const BusyHouseStateComboBox = "busy_house_state";
+  static const BusyYearOfConstruction = "busy_year_of_construction";
+  static const BusyHouseLayoutComboBox = "busy_house_layout";
+  static const BusyHouseOrientationComboBox = "busy_house_orientation";
+
+  // MARK - --Busy-- Fourth section
+
+  // MARK - --Busy-- Fifth section
+  static const BusyOthers = "busy_others";
+
+// MARK - --Modifiers-- First section
   void setModality(String newValue) {
     setBusyForObject(BusyModalityComboBox, true);
     modality = newValue;
@@ -98,6 +146,47 @@ class NewRegisterViewModel extends BaseViewModel {
     setBusyForObject(BusyRentalPrice, true);
     rentalPrice = newValue;
     setBusyForObject(BusyRentalPrice, false);
+  }
+
+// MARK - --Modifiers-- Second section
+
+// MARK - --Modifiers-- Third section
+  void setHouseState(String newValue) {
+    print(newValue);
+    setBusyForObject(BusyHouseStateComboBox, true);
+    houseState = newValue;
+    setBusyForObject(BusyHouseStateComboBox, false);
+  }
+
+  void setYearOfConstruction(int newValue) {
+    print(newValue);
+    setBusyForObject(BusyYearOfConstruction, true);
+    yearOfConstruction = newValue;
+    setBusyForObject(BusyYearOfConstruction, false);
+  }
+
+  void setHouseLayout(String newValue) {
+    print(newValue);
+    setBusyForObject(BusyHouseLayoutComboBox, true);
+    houseLayout = newValue;
+    setBusyForObject(BusyHouseLayoutComboBox, false);
+  }
+
+  void setHouseOrientation(String newValue) {
+    print(newValue);
+    setBusyForObject(BusyHouseOrientationComboBox, true);
+    houseOrientation = newValue;
+    setBusyForObject(BusyHouseOrientationComboBox, false);
+  }
+
+// MARK - --Modifiers-- Fourth section
+
+// MARK - --Modifiers-- Fifth section
+  void setOthers(String newValue) {
+    print(newValue);
+    setBusyForObject(BusyOthers, true);
+    others = newValue;
+    setBusyForObject(BusyOthers, false);
   }
 
   void onTapCancel() {

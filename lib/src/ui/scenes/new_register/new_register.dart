@@ -84,155 +84,190 @@ class _NewRegisterState extends State<NewRegister> {
       isActive: false,
       state: StepState.editing,
       title: const Text('Step 2'),
-      content: Column(
-        children: <Widget>[
-          Row(
+      content: ViewModelBuilder.reactive(
+        builder: (context, NewRegisterViewModel viewModel, child) {
+          return Column(
             children: <Widget>[
-              Expanded(
-                child: TextFormField(
-                    decoration: InputDecoration(labelText: 'M2 Terreno'),
-                    keyboardType: TextInputType.number),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: TextFormField(
+                        decoration: InputDecoration(labelText: 'M2 Terreno'),
+                        keyboardType: TextInputType.number),
+                  ),
+                  Expanded(
+                    child: ComboBox(title: '', values: ['M2', 'Ha']),
+                  ),
+                ],
               ),
-              Expanded(
-                child: ComboBox(title: '', values: ['M2', 'Ha']),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: TextFormField(
+                        decoration: InputDecoration(labelText: 'M2 Edificados'),
+                        keyboardType: TextInputType.number),
+                  ),
+                  Expanded(
+                    child: ComboBox(title: '', values: ['M2', 'Ha']),
+                  ),
+                ],
               ),
+              TextFormField(
+                  decoration:
+                      InputDecoration(labelText: 'Cantidad de Dormitorios'),
+                  keyboardType: TextInputType.number),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Dormitorio 1 M2'),
+                  keyboardType: TextInputType.number),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Dormitorio 2 M2'),
+                  keyboardType: TextInputType.number),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Dormitorio 3 M2'),
+                  keyboardType: TextInputType.number),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Cantidad de Baños'),
+                  keyboardType: TextInputType.number),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Baño 1 M2'),
+                  keyboardType: TextInputType.number),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Baño 2 M2'),
+                  keyboardType: TextInputType.number),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Baño 3 M2'),
+                  keyboardType: TextInputType.number),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Living M2'),
+                  keyboardType: TextInputType.number),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Comedor M2'),
+                  keyboardType: TextInputType.number),
+              ComboBox(title: 'Tipo de Cocina', values: ['I', 'K', 'O']),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Cocina M2'),
+                  keyboardType: TextInputType.number),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Cantidad de Plantas'),
+                  keyboardType: TextInputType.number),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Cochera M2'),
+                  keyboardType: TextInputType.number),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Jardín M2'),
+                  keyboardType: TextInputType.number),
+              TextFormField(
+                  decoration: InputDecoration(labelText: 'Fondo M2'),
+                  keyboardType: TextInputType.number),
             ],
-          ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: TextFormField(
-                    decoration: InputDecoration(labelText: 'M2 Edificados'),
+          );
+        },
+        viewModelBuilder: () => locator<NewRegisterViewModel>(),
+      ),
+    ),
+    Step(
+        isActive: false,
+        state: StepState.editing,
+        title: const Text('Step 3'),
+        content: ViewModelBuilder.reactive(
+          builder: (context, NewRegisterViewModel viewModel, child) {
+            return Column(
+              children: <Widget>[
+                ComboBox(
+                  title: 'Estado',
+                  values: [
+                    'Reciclar',
+                    'Regular',
+                    'Bueno',
+                    'Muy Bueno',
+                    'Excelente'
+                  ],
+                  onChanged: viewModel.setHouseState,
+                ),
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Año de construcción'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setYearOfConstruction(int.parse(newValue)),
+                ),
+                ComboBox(
+                  title: 'Disposición',
+                  values: ['Frente', 'Contrafrente', 'Lateral', 'Interno'],
+                  onChanged: viewModel.setHouseLayout,
+                ),
+                ComboBox(
+                  title: 'Orientación',
+                  values: [
+                    'Norte',
+                    'Sur',
+                    'Este',
+                    'Oeste',
+                    'NorOeste',
+                    'NorEste',
+                    'SurOeste',
+                    'SurEste'
+                  ],
+                  onChanged: viewModel.setHouseOrientation,
+                ),
+              ],
+            );
+          },
+          viewModelBuilder: () => locator<NewRegisterViewModel>(),
+        )),
+    Step(
+        isActive: false,
+        state: StepState.editing,
+        title: const Text('Step 4'),
+        content: ViewModelBuilder.reactive(
+          builder: (context, NewRegisterViewModel viewModel, child) {
+            return Column(
+              children: <Widget>[
+                TextFormField(
+                    decoration:
+                        InputDecoration(labelText: 'Pisos del edificio'),
                     keyboardType: TextInputType.number),
-              ),
-              Expanded(
-                child: ComboBox(title: '', values: ['M2', 'Ha']),
-              ),
-            ],
-          ),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Cantidad de Dormitorios'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Dormitorio 1 M2'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Dormitorio 2 M2'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Dormitorio 3 M2'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Cantidad de Baños'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Baño 1 M2'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Baño 2 M2'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Baño 3 M2'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Living M2'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Comedor M2'),
-              keyboardType: TextInputType.number),
-          ComboBox(title: 'Tipo de Cocina', values: ['I', 'K', 'O']),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Cocina M2'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Cantidad de Plantas'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Cochera M2'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Jardín M2'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Fondo M2'),
-              keyboardType: TextInputType.number),
-        ],
-      ),
-    ),
+                TextFormField(
+                    decoration: InputDecoration(labelText: 'Gastos comunes'),
+                    keyboardType: TextInputType.number),
+                TextFormField(
+                    decoration: InputDecoration(labelText: 'Impuestos'),
+                    keyboardType: TextInputType.number),
+                TextFormField(
+                    decoration: InputDecoration(labelText: 'Contribución'),
+                    keyboardType: TextInputType.number),
+                TextFormField(
+                    decoration: InputDecoration(labelText: 'Impuesto Primaria'),
+                    keyboardType: TextInputType.number),
+                TextFormField(
+                    decoration:
+                        InputDecoration(labelText: 'Tributos Domiciliarios'),
+                    keyboardType: TextInputType.number),
+                TextFormField(
+                    decoration:
+                        InputDecoration(labelText: 'Tarifa de Saneamiento'),
+                    keyboardType: TextInputType.number),
+              ],
+            );
+          },
+          viewModelBuilder: () => locator<NewRegisterViewModel>(),
+        )),
     Step(
-      isActive: false,
-      state: StepState.editing,
-      title: const Text('Step 3'),
-      content: Column(
-        children: <Widget>[
-          ComboBox(title: 'Estado', values: [
-            'Reciclar',
-            'Regular',
-            'Bueno',
-            'Muy Bueno',
-            'Excelente'
-          ]),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Año de construcción'),
-              keyboardType: TextInputType.number),
-          ComboBox(
-              title: 'Disposición',
-              values: ['Frente', 'Contrafrente', 'Lateral', 'Interno']),
-          ComboBox(title: 'Orientación', values: [
-            'Norte',
-            'Sur',
-            'Este',
-            'Oeste',
-            'NorOeste',
-            'NorEste',
-            'SurOeste',
-            'SurEste'
-          ]),
-        ],
-      ),
-    ),
-    Step(
-      isActive: false,
-      state: StepState.editing,
-      title: const Text('Step 4'),
-      content: Column(
-        children: <Widget>[
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Pisos del edificio'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Gastos comunes'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Impuestos'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Contribución'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Impuesto Primaria'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Tributos Domiciliarios'),
-              keyboardType: TextInputType.number),
-          TextFormField(
-              decoration: InputDecoration(labelText: 'Tarifa de Saneamiento'),
-              keyboardType: TextInputType.number),
-        ],
-      ),
-    ),
-    Step(
-      isActive: false,
-      state: StepState.editing,
-      title: const Text('Step 5'),
-      content: Column(
-        children: <Widget>[
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Otros'),
-          ),
-        ],
-      ),
-    ),
+        isActive: false,
+        state: StepState.editing,
+        title: const Text('Step 5'),
+        content: ViewModelBuilder.reactive(
+          builder: (context, NewRegisterViewModel viewModel, child) {
+            return Column(
+              children: <Widget>[
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Otros'),
+                  onChanged: (newValue) => viewModel.setOthers(newValue),
+                ),
+              ],
+            );
+          },
+          viewModelBuilder: () => locator<NewRegisterViewModel>(),
+        )),
   ];
   int currentStep = 0;
   bool complete = false;
