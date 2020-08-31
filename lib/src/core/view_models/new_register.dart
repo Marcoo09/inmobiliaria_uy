@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:inmobiliariauy/src/core/services/navigation_service.dart';
 import 'package:inmobiliariauy/src/locator.dart';
@@ -15,7 +14,7 @@ class NewRegisterViewModel extends BaseViewModel {
   // MARK: - Busy keys
   // static const BusyStock = "busy_stock";
 
-  SearchStockViewModel() {
+  NewRegisterViewModel() {
     textFieldController.addListener(onSearchChanged);
   }
 

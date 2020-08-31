@@ -112,7 +112,7 @@ class _NewRegisterState extends State<NewRegister> {
               decoration: InputDecoration(labelText: 'Cocina M2'),
               keyboardType: TextInputType.number),
           TextFormField(
-              decoration: InputDecoration(labelText: 'Cantidad de Plant'),
+              decoration: InputDecoration(labelText: 'Cantidad de Plantas'),
               keyboardType: TextInputType.number),
           TextFormField(
               decoration: InputDecoration(labelText: 'Cochera M2'),
