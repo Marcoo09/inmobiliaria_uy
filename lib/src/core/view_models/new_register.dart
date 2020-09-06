@@ -18,20 +18,22 @@ class NewRegisterViewModel extends BaseViewModel {
   int rentalPrice = 0;
 
   // MARK - Second section
-  int m2Ground;
-  int m2Built;
-  int quantityOfBedrooms;
-  List<int> m2OfBedrooms;
-  int quantityOfBathrooms;
-  List<int> m2OfBathrooms;
-  int m2OfLiving;
-  int m2OfDinningRoom;
-  String typeOfKitchen;
-  int m2OfKitchen;
-  int quantityOfFloors;
-  int m2OfGarage;
-  int m2OfFrontGarden;
-  int m2OfBackGarden;
+  int m2Ground = 0;
+  String groundMetric = "M2";
+  int m2Built = 0;
+  String builtMetric = "M2";
+  int quantityOfBedrooms = 0;
+  List<int> m2OfBedrooms = new List<int>(8);
+  int quantityOfBathrooms = 0;
+  List<int> m2OfBathrooms = new List<int>(4);
+  int m2OfLiving = 0;
+  int m2OfDinningRoom = 0;
+  String typeOfKitchen = "I";
+  int m2OfKitchen = 0;
+  int quantityOfFloors = 0;
+  int m2OfGarage = 0;
+  int m2OfFrontGarden = 0;
+  int m2OfBackGarden = 0;
 
   // MARK - Third section
   String houseState = 'Reciclar';
@@ -69,6 +71,22 @@ class NewRegisterViewModel extends BaseViewModel {
   static const BusyRentalPrice = "busy_rental_price";
 
   // MARK - --Busy-- Second section
+  static const BusyM2Ground = "busy_m2_ground";
+  static const BusyGroundMetricComboBox = "busy_ground_metric";
+  static const BusyM2Built = "busy_m2_built";
+  static const BusyBuiltMetricComboBox = "busy_built_metric";
+  static const BusyQuantityOfBedrooms = "busy_quantity_of_bedrooms";
+  static const BusyM2OfBedrooms = "busy_m2_of_bedrooms";
+  static const BusyQuantityOfBathrooms = "busy_quantity_of_bathrooms";
+  static const BusyM2OfBathrooms = "busy_m2_of_bathrooms";
+  static const BusyM2OfLiving = "busy_m2_of_living";
+  static const BusyM2OfDinningRoom = "busy_m2_of_dinning_room";
+  static const BusyTypeOfKitchen = "busy_type_of_kitchen";
+  static const BusyM2OfKitchen = "busy_m2_of_kitchen";
+  static const BusyQuantityOfFloors = "busy_quantity_of_floors";
+  static const BusyM2OfGarage = "busy_m2_of_garage";
+  static const BusyM2OfFrontGarden = "busy_m2_of_front_garden";
+  static const BusyM2OfBackGarden = "busy_m2_of_back_garden";
 
   // MARK - --Busy-- Third section
   static const BusyHouseStateComboBox = "busy_house_state";
@@ -156,6 +174,103 @@ class NewRegisterViewModel extends BaseViewModel {
   }
 
   // MARK - --Modifiers-- Second section
+  void setM2Ground(int newValue) {
+    setBusyForObject(BusyM2Ground, true);
+    m2Ground = newValue;
+    setBusyForObject(BusyM2Ground, false);
+  }
+
+  void setGroundMetric(String newValue) {
+    setBusyForObject(BusyGroundMetricComboBox, true);
+    groundMetric = newValue;
+    setBusyForObject(BusyGroundMetricComboBox, false);
+  }
+
+  void setM2Built(int newValue) {
+    setBusyForObject(BusyM2Built, true);
+    m2Built = newValue;
+    setBusyForObject(BusyM2Built, false);
+  }
+
+  void setBuiltMetric(String newValue) {
+    setBusyForObject(BusyBuiltMetricComboBox, true);
+    builtMetric = newValue;
+    setBusyForObject(BusyBuiltMetricComboBox, false);
+  }
+
+  void setQuantityOfBedrooms(int newValue) {
+    setBusyForObject(BusyQuantityOfBedrooms, true);
+    quantityOfBedrooms = newValue;
+    setBusyForObject(BusyQuantityOfBedrooms, false);
+  }
+
+  void setM2OfBedroom(int bedroomIndex, int value) {
+    setBusyForObject(BusyM2OfBedrooms, true);
+    m2OfBedrooms[bedroomIndex] = value;
+    setBusyForObject(BusyM2OfBedrooms, false);
+  }
+
+  void setQuantityOfBathrooms(int newValue) {
+    setBusyForObject(BusyQuantityOfBathrooms, true);
+    quantityOfBathrooms = newValue;
+    setBusyForObject(BusyQuantityOfBathrooms, false);
+  }
+
+  void setM2OfBathroom(int bathroomIndex, int value) {
+    setBusyForObject(BusyM2OfBathrooms, true);
+    m2OfBathrooms[bathroomIndex] = value;
+    setBusyForObject(BusyM2OfBathrooms, false);
+  }
+
+  void setM2OfLiving(int newValue) {
+    setBusyForObject(BusyM2OfLiving, true);
+    m2OfLiving = newValue;
+    setBusyForObject(BusyM2OfLiving, false);
+  }
+
+  void setM2OfDinningRoom(int newValue) {
+    setBusyForObject(BusyM2OfDinningRoom, true);
+    m2OfDinningRoom = newValue;
+    setBusyForObject(BusyM2OfDinningRoom, false);
+  }
+
+  void setTypeOfKitchen(String newValue) {
+    setBusyForObject(BusyTypeOfKitchen, true);
+    typeOfKitchen = newValue;
+    setBusyForObject(BusyTypeOfKitchen, false);
+  }
+
+  void setM2OfKitchen(int newValue) {
+    setBusyForObject(BusyM2OfKitchen, true);
+    m2OfKitchen = newValue;
+    setBusyForObject(BusyM2OfKitchen, false);
+  }
+
+  void setQuantityOfFloors(int newValue) {
+    setBusyForObject(BusyQuantityOfFloors, true);
+    quantityOfFloors = newValue;
+    setBusyForObject(BusyQuantityOfFloors, false);
+  }
+
+  void setM2OfGarage(int newValue) {
+    setBusyForObject(BusyM2OfGarage, true);
+    m2OfGarage = newValue;
+    setBusyForObject(BusyM2OfGarage, false);
+  }
+
+  void setM2OfFrontGarden(int newValue) {
+    setBusyForObject(BusyM2OfFrontGarden, true);
+    m2OfFrontGarden = newValue;
+    setBusyForObject(BusyM2OfFrontGarden, false);
+  }
+
+  void setM2OfBackGarden(int newValue) {
+    setBusyForObject(BusyM2OfBackGarden, true);
+    m2OfBackGarden = newValue;
+    setBusyForObject(BusyM2OfBackGarden, false);
+  }
+
+//   static const  = "busy_m2_of_back_garden";
 
   // MARK - --Modifiers-- Third section
   void setHouseState(String newValue) {

@@ -92,11 +92,19 @@ class _NewRegisterState extends State<NewRegister> {
                 children: <Widget>[
                   Expanded(
                     child: TextFormField(
-                        decoration: InputDecoration(labelText: 'M2 Terreno'),
-                        keyboardType: TextInputType.number),
+                      decoration: InputDecoration(
+                          labelText: '${viewModel.groundMetric} Terreno'),
+                      keyboardType: TextInputType.number,
+                      onChanged: (newValue) =>
+                          viewModel.setM2Ground(int.parse(newValue)),
+                    ),
                   ),
                   Expanded(
-                    child: ComboBox(title: '', values: ['M2', 'Ha']),
+                    child: ComboBox(
+                      title: '',
+                      values: ['M2', 'Ha'],
+                      onChanged: viewModel.setGroundMetric,
+                    ),
                   ),
                 ],
               ),
@@ -104,61 +112,191 @@ class _NewRegisterState extends State<NewRegister> {
                 children: <Widget>[
                   Expanded(
                     child: TextFormField(
-                        decoration: InputDecoration(labelText: 'M2 Edificados'),
-                        keyboardType: TextInputType.number),
+                      decoration: InputDecoration(
+                          labelText: '${viewModel.builtMetric} Edificados'),
+                      keyboardType: TextInputType.number,
+                      onChanged: (newValue) =>
+                          viewModel.setM2Built(int.parse(newValue)),
+                    ),
                   ),
                   Expanded(
-                    child: ComboBox(title: '', values: ['M2', 'Ha']),
+                    child: ComboBox(
+                      title: '',
+                      values: ['M2', 'Ha'],
+                      onChanged: viewModel.setBuiltMetric,
+                    ),
                   ),
                 ],
               ),
               TextFormField(
-                  decoration:
-                      InputDecoration(labelText: 'Cantidad de Dormitorios'),
-                  keyboardType: TextInputType.number),
-              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Cantidad de Dormitorios',
+                ),
+                keyboardType: TextInputType.number,
+                onChanged: (newValue) =>
+                    viewModel.setQuantityOfBedrooms(int.parse(newValue)),
+              ),
+              Visibility(
+                visible: viewModel.quantityOfBedrooms >= 1,
+                child: TextFormField(
                   decoration: InputDecoration(labelText: 'Dormitorio 1 M2'),
-                  keyboardType: TextInputType.number),
-              TextFormField(
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setM2OfBedroom(0, int.parse(newValue)),
+                ),
+              ),
+              Visibility(
+                visible: viewModel.quantityOfBedrooms >= 2,
+                child: TextFormField(
                   decoration: InputDecoration(labelText: 'Dormitorio 2 M2'),
-                  keyboardType: TextInputType.number),
-              TextFormField(
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setM2OfBedroom(1, int.parse(newValue)),
+                ),
+              ),
+              Visibility(
+                visible: viewModel.quantityOfBedrooms >= 3,
+                child: TextFormField(
                   decoration: InputDecoration(labelText: 'Dormitorio 3 M2'),
-                  keyboardType: TextInputType.number),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setM2OfBedroom(2, int.parse(newValue)),
+                ),
+              ),
+              Visibility(
+                visible: viewModel.quantityOfBedrooms >= 4,
+                child: TextFormField(
+                  decoration: InputDecoration(labelText: 'Dormitorio 4 M2'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setM2OfBedroom(3, int.parse(newValue)),
+                ),
+              ),
+              Visibility(
+                visible: viewModel.quantityOfBedrooms >= 5,
+                child: TextFormField(
+                  decoration: InputDecoration(labelText: 'Dormitorio 5 M2'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setM2OfBedroom(4, int.parse(newValue)),
+                ),
+              ),
+              Visibility(
+                visible: viewModel.quantityOfBedrooms >= 6,
+                child: TextFormField(
+                  decoration: InputDecoration(labelText: 'Dormitorio 6 M2'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setM2OfBedroom(5, int.parse(newValue)),
+                ),
+              ),
+              Visibility(
+                visible: viewModel.quantityOfBedrooms >= 7,
+                child: TextFormField(
+                  decoration: InputDecoration(labelText: 'Dormitorio 7 M2'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setM2OfBedroom(6, int.parse(newValue)),
+                ),
+              ),
+              Visibility(
+                visible: viewModel.quantityOfBedrooms >= 8,
+                child: TextFormField(
+                  decoration: InputDecoration(labelText: 'Dormitorio 8 M2'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setM2OfBedroom(7, int.parse(newValue)),
+                ),
+              ),
               TextFormField(
-                  decoration: InputDecoration(labelText: 'Cantidad de Baños'),
-                  keyboardType: TextInputType.number),
-              TextFormField(
+                decoration: InputDecoration(labelText: 'Cantidad de Baños'),
+                keyboardType: TextInputType.number,
+                onChanged: (newValue) =>
+                    viewModel.setQuantityOfBathrooms(int.parse(newValue)),
+              ),
+              Visibility(
+                visible: viewModel.quantityOfBathrooms >= 1,
+                child: TextFormField(
                   decoration: InputDecoration(labelText: 'Baño 1 M2'),
-                  keyboardType: TextInputType.number),
-              TextFormField(
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setM2OfBathroom(0, int.parse(newValue)),
+                ),
+              ),
+              Visibility(
+                visible: viewModel.quantityOfBathrooms >= 2,
+                child: TextFormField(
                   decoration: InputDecoration(labelText: 'Baño 2 M2'),
-                  keyboardType: TextInputType.number),
-              TextFormField(
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setM2OfBathroom(1, int.parse(newValue)),
+                ),
+              ),
+              Visibility(
+                visible: viewModel.quantityOfBathrooms >= 3,
+                child: TextFormField(
                   decoration: InputDecoration(labelText: 'Baño 3 M2'),
-                  keyboardType: TextInputType.number),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setM2OfBathroom(2, int.parse(newValue)),
+                ),
+              ),
+              Visibility(
+                visible: viewModel.quantityOfBathrooms >= 4,
+                child: TextFormField(
+                  decoration: InputDecoration(labelText: 'Baño 4 M2'),
+                  keyboardType: TextInputType.number,
+                  onChanged: (newValue) =>
+                      viewModel.setM2OfBathroom(3, int.parse(newValue)),
+                ),
+              ),
               TextFormField(
-                  decoration: InputDecoration(labelText: 'Living M2'),
-                  keyboardType: TextInputType.number),
+                decoration: InputDecoration(labelText: 'Living M2'),
+                keyboardType: TextInputType.number,
+                onChanged: (newValue) =>
+                    viewModel.setM2OfLiving(int.parse(newValue)),
+              ),
               TextFormField(
-                  decoration: InputDecoration(labelText: 'Comedor M2'),
-                  keyboardType: TextInputType.number),
-              ComboBox(title: 'Tipo de Cocina', values: ['I', 'K', 'O']),
+                decoration: InputDecoration(labelText: 'Comedor M2'),
+                keyboardType: TextInputType.number,
+                onChanged: (newValue) =>
+                    viewModel.setM2OfDinningRoom(int.parse(newValue)),
+              ),
+              ComboBox(
+                title: 'Tipo de Cocina',
+                values: ['I', 'K', 'O'],
+                onChanged: (newValue) => viewModel.setTypeOfKitchen,
+              ),
               TextFormField(
-                  decoration: InputDecoration(labelText: 'Cocina M2'),
-                  keyboardType: TextInputType.number),
+                decoration: InputDecoration(labelText: 'Cocina M2'),
+                keyboardType: TextInputType.number,
+                onChanged: (newValue) =>
+                    viewModel.setM2OfKitchen(int.parse(newValue)),
+              ),
               TextFormField(
-                  decoration: InputDecoration(labelText: 'Cantidad de Plantas'),
-                  keyboardType: TextInputType.number),
+                decoration: InputDecoration(labelText: 'Cantidad de Plantas'),
+                keyboardType: TextInputType.number,
+                onChanged: (newValue) =>
+                    viewModel.setQuantityOfFloors(int.parse(newValue)),
+              ),
               TextFormField(
-                  decoration: InputDecoration(labelText: 'Cochera M2'),
-                  keyboardType: TextInputType.number),
+                decoration: InputDecoration(labelText: 'Cochera M2'),
+                keyboardType: TextInputType.number,
+                onChanged: (newValue) =>
+                    viewModel.setM2OfGarage(int.parse(newValue)),
+              ),
               TextFormField(
-                  decoration: InputDecoration(labelText: 'Jardín M2'),
-                  keyboardType: TextInputType.number),
+                decoration: InputDecoration(labelText: 'Jardín M2'),
+                keyboardType: TextInputType.number,
+                onChanged: (newValue) =>
+                    viewModel.setM2OfFrontGarden(int.parse(newValue)),
+              ),
               TextFormField(
-                  decoration: InputDecoration(labelText: 'Fondo M2'),
-                  keyboardType: TextInputType.number),
+                decoration: InputDecoration(labelText: 'Fondo M2'),
+                keyboardType: TextInputType.number,
+                onChanged: (newValue) =>
+                    viewModel.setM2OfBackGarden(int.parse(newValue)),
+              ),
             ],
           );
         },
