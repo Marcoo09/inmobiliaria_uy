@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 class ComboBox extends StatefulWidget {
   final List<String> values;
   final String title;
-  final Function onChanged;
-
-  ComboBox({Key key, this.values, this.title, this.onChanged})
-      : super(key: key);
+  ComboBox({Key key, this.values, this.title}) : super(key: key);
 
   @override
   _ComboBoxState createState() => new _ComboBoxState();
@@ -46,7 +43,6 @@ class _ComboBoxState extends State<ComboBox> {
   }
 
   void changedDropDownItem(String selectedValue) {
-    widget.onChanged(selectedValue);
     setState(() {
       _currentValue = selectedValue;
     });
